@@ -1,0 +1,11 @@
+notes = new ArrayList<>();
+fileName = "notes.json";
+loadNotes();
+
+listview1.setAdapter(new Listview1Adapter(notes));
+
+fab.setOnClickListener(v -> {
+    Intent i = new Intent(MainActivity.this, EditNoteActivity.class);
+    i.putExtra("index", -1); // -1 for new note
+    startActivity(i);
+});
